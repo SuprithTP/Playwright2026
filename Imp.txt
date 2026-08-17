@@ -1,0 +1,25 @@
+1 In Agile, testers contribute by collaborating closely with developers and product owners, defining acceptance criteria, performing continuous testing,
+ ensuring regression coverage, and advocating quality throughout the sprint.
+
+2 we mark the incomplete ones as spillover. I would first communicate this in the sprint review. we take the spillover stories as priority in the next sprint
+
+3 I would create a JIRA filter using labels or custom fields to track all test execution and defect tickets.
+
+
+4 Agile is a software development methodology that delivers working software in small, iterative increments, focusing on collaboration, adaptability, and customer satisfaction.
+
+The role of testers in Agile is to work closely with developers and product owners from the beginning, help define acceptance criteria, perform continuous and exploratory testing, ensure regression coverage,
+
+
+5.For a login page, I’ll test positive and negative scenarios, input validations, error messages, boundary conditions, usability aspects, and security checks like session handling
+
+6>WHERE → cannot be used with aggregate functions because it filters before grouping/aggregation.
+
+HAVING → can be used with aggregate functions because it filters after grouping/aggregation.
+
+
+7. Wildcard characters are special symbols used in SQL with the LIKE operator to search for patterns in strings.  select * from employees where name like 'S%'
+
+8. select id, name, salary from employees ORDER BY salary desc limit 5; 
+
+9. SELECT d.department_name, AVG(e.salary) as avg_salary from Employees e JOIN Department d on e.department_id = d.id GROUP BY d.department_name ORDER BY d.department_name
