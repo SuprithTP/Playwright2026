@@ -27,6 +27,11 @@ class LoginPage{
         return this.page.locator("(//input[@name='signInSubmitButton'])[2]")
     }
 
+    get multipleElements()
+    {
+        return this.page.locator("(//tbody)//tr[1]//td")
+    }
+
 
     async login(userName,passWord)
     {
@@ -36,4 +41,4 @@ class LoginPage{
         await this.btnSignIn.click()
     }
 }
-module.exports ={LoginPage}
+module.exports =LoginPage
