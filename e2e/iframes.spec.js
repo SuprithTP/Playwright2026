@@ -1,17 +1,19 @@
 import test from '@playwright/test'
 import expect from '@playwright/test'
 
-test("InnerFrames", async({page}) =>{
 
-    await page.goto("https://ui.vision/demo/webtest/frames/")
-    await page.waitForTimeout(3000)
-    var frame3= page.frame({url:"https://ui.vision/demo/webtest/frames/frame_3.html"})       // using names or url we cab access the frames
-    await frame3.fill("//input[@name='mytext3']", "Hiiii")
-    var child= frame3.childFrames()
-    await child[0].fill("//input[@aria-label='Other response']","I am Suprith")
-    await page.waitForTimeout(3000)
+test("InnerFrames", async ({ page }) => {
 
-})
+    await page.goto("https://ui.vision/demo/webtest/frames/");
+
+    const frame3 = page.frame({url:"https://ui.vision/demo/webtest/frames/frame_3"})
+
+    await frame3.locator("//input[@name='mytext3']").fill("Hiiii");
+
+    const child = frame3.childFrames();
+
+    await child[0].locator("//input[@aria-label='Other response']").fill("I am Suprith");
+});
 
 
 
