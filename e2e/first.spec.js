@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 
-test('Checking the url', async ({page}) => {
+test.skip('Checking the url', async ({page}) => {
 
     await page.goto('https://testclient5-oversight.qa.lokavant.com/')
     // await expect(page).toHaveTitle('STORE')

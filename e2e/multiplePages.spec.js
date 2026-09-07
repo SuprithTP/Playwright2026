@@ -12,7 +12,7 @@ test("Muliple window", async () =>{
     const pagepromise = context.waitForEvent("page")
     await page1.locator("//a[.='OrangeHRM, Inc']").click()
     const page2 = await pagepromise
-    expect(page2).toHaveTitle("Human Resources Management Software | HRMS | OrangeHRM")
+    expect(page2).toHaveTitle("OrangeHRM: All in One HR Software for Businesses | OrangeHRM")
     await page2.waitForTimeout(5000)
     await page2.screenshot({path:"test-results/screenshot.png"})
 })

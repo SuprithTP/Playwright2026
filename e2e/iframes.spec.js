@@ -4,6 +4,7 @@ import expect from '@playwright/test'
 test("InnerFrames", async({page}) =>{
 
     await page.goto("https://ui.vision/demo/webtest/frames/")
+    await page.waitForTimeout(3000)
     var frame3= page.frame({url:"https://ui.vision/demo/webtest/frames/frame_3.html"})       // using names or url we cab access the frames
     await frame3.fill("//input[@name='mytext3']", "Hiiii")
     var child= frame3.childFrames()
