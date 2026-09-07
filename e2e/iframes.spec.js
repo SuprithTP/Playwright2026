@@ -18,45 +18,45 @@ test("InnerFrames", async({page}) =>{
 
 //enabling alter handler or dialog window handler
  
-await page.on('dialog', async (dialog) =>{
-    expect(dialog.type()).toContain('Alert')
-    expect(dialog.message()).toContain('Message')
-    await dialog.accept() 
-    await dialog.dismiss()
+// await page.on('dialog', async (dialog) =>{
+//     expect(dialog.type()).toContain('Alert')
+//     expect(dialog.message()).toContain('Message')
+//     await dialog.accept() 
+//     await dialog.dismiss()
 
 
-    //if we want to provide the value in prompt we can use 
-    expect(dialog.defaultValue()).toContain("Default value")   //to check the default value in prompt dilog text box
-    await dialog.accept("Value to pass")
+//     //if we want to provide the value in prompt we can use 
+//     expect(dialog.defaultValue()).toContain("Default value")   //to check the default value in prompt dilog text box
+//     await dialog.accept("Value to pass")
 
-})
+// })
 
 
 //filter function for filtering out the elements
 
 
 
-const rows = await page.locator('//table//tr')  // captures all the rows in the table
-var matchedRow =await rows.filter({             
-    has: page.locator('td'),                    // filters all the rows which has columns data or table data in the table
-    hasText: 'Product 4'                        // filters the  rows which has the text as Product 4
-})
-await matchedRow.locator('input').check()       // check the radio btn or check box of the row which has text as product 4
+// const rows = await page.locator('//table//tr')  // captures all the rows in the table
+// var matchedRow =await rows.filter({             
+//     has: page.locator('td'),                    // filters all the rows which has columns data or table data in the table
+//     hasText: 'Product 4'                        // filters the  rows which has the text as Product 4
+// })
+// await matchedRow.locator('input').check()       // check the radio btn or check box of the row which has text as product 4
 
 
 
 
 
-for(i=0 ; i<rows.count() ; i++)
-{
-    var row = rows.nth(i)        
-    var tds = row.locator('td')   // await page.locator('tr[i]//td')
-    for(j=0 ; j<tds.count() ; j++)
-    {
-        console.log(await tds.nth(j).textContent())
-    }
+// for(i=0 ; i<rows.count() ; i++)
+// {
+//     var row = rows.nth(i)        
+//     var tds = row.locator('td')   // await page.locator('tr[i]//td')
+//     for(j=0 ; j<tds.count() ; j++)
+//     {
+//         console.log(await tds.nth(j).textContent())
+//     }
 
-}
+// }
 
 
 
