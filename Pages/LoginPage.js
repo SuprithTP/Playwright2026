@@ -41,4 +41,4 @@ class LoginPage{
         await this.btnSignIn.click()
     }
 }
-module.exports =LoginPage
+module.exports = LoginPage
